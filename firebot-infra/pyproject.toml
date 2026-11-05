@@ -1,0 +1,19 @@
+[project]
+name = "firebot-infra"
+version = "1.2.0"
+description = "Software-only supporting infrastructure for Fire Bot (AKSHARA first)"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+firebot-infra = "firebot_infra.cli:main"
+
+[project.optional-dependencies]
+crypto = ["cryptography>=42"]   # needed only for firebot_infra.kavach
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

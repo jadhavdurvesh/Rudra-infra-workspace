@@ -1,0 +1,13 @@
+[project]
+name = "firebot"
+version = "0.1.0"
+description = "Fire Bot application: simulator, first autonomy behavior (search, find heat source, report), built on firebot-infra"
+requires-python = ">=3.10"
+dependencies = ["firebot-infra"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
