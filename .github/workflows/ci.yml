@@ -1,0 +1,26 @@
+# Written but not yet run on a CI server.
+name: ci
+on: [push, pull_request]
+jobs:
+  full:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - run: pip install "./firebot-infra[crypto]" ./firebot-app
+      - run: firebot-infra selftest
+      - run: python -m unittest discover -s firebot-infra/tests
+      - run: python -m unittest discover -s firebot-app/tests
+  core-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - run: pip install ./firebot-infra ./firebot-app          # no cryptography: crypto tests must skip, not fail
+      - run: python -m unittest discover -s firebot-infra/tests
