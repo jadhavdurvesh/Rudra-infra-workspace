@@ -1,13 +1,13 @@
-# Fire Bot workspace
+# RUDRA–FireBot License Pack
 
-    firebot-infra/   THE PRODUCT: reusable software infrastructure (state quality, messaging, recording, analytics, security,
-                     sync, storage, diagnostics, ...). Start with firebot-infra/README.md and RELEASE_NOTES.md.
-    firebot-app/     a TEST WORKLOAD: a small simulated robot that exercises the infrastructure end to end. Not the focus.
+- `LICENSE`: plain-text master license copy.
+- `LICENSE.md`: formatted master license.
+- `LICENSES/README.md`: component register and precedence.
+- `LICENSES/COMPONENTS/`: component-specific licensing schedules.
+- `THIRD_PARTY_NOTICES.md`: third-party rights notice.
 
-## Install (Python 3.10+)
-    python -m venv .venv && source .venv/bin/activate        # Windows: .venv\Scripts\activate
-    pip install "./firebot-infra[crypto]" ./firebot-app       # drop [crypto] for a core-only install
-    firebot-infra selftest                                    # 15 quick checks on this machine
-    make test                                                 # or: python -m unittest discover -s firebot-infra/tests
+The master license is RUFPSL-1.0. Each component schedule supplements the master terms; it is not a separate open-source license.
 
-See `CHANGELOG.md` for what changed and where each part came from.
+The RUDRA language and compiler are separately licensed under RPREL-1.0 where applicable.
+
+This is a custom proprietary license draft, not an OSI-approved open-source license. Have an Indian intellectual-property lawyer review it before relying on it for commercial enforcement, especially where multiple contributors own copyright.
